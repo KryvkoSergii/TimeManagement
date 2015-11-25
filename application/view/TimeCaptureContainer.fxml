@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="580.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.TimeCaptureContainerController">
+   <children>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#incomingTime" text="Отметить время прихода" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+      <Button layoutX="14.0" layoutY="52.0" mnemonicParsing="false" onAction="#outcomingTime" text="Отметить время ухода" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0" />
+      <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="14.0" layoutY="290.0" prefHeight="283.0" prefWidth="370.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="280.0">
+         <content>
+            <TableView prefHeight="200.0" prefWidth="200.0">
+              <columns>
+                <TableColumn prefWidth="68.0" text="Дата" />
+                <TableColumn prefWidth="125.0" text="Время прихода" />
+                  <TableColumn prefWidth="109.0" text="Время ухода" />
+                  <TableColumn prefWidth="65.0" text="Рабочее время" />
+              </columns>
+            </TableView>
+         </content>
+      </ScrollPane>
+      <Label layoutX="15.0" layoutY="93.0" text="Сегодня" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="230.0" AnchorPane.topAnchor="90.0" />
+      <DatePicker fx:id="currentDate" layoutX="188.0" layoutY="85.0" />
+      <Pane layoutX="15.0" layoutY="174.0" prefHeight="99.0" prefWidth="370.0">
+         <children>
+            <DatePicker fx:id="startDatePoint" layoutX="19.0" layoutY="23.0" prefHeight="25.0" prefWidth="161.0" />
+            <DatePicker fx:id="endDatePoint" layoutX="208.0" layoutY="23.0" prefHeight="25.0" prefWidth="161.0" />
+            <Label layoutX="1.0" text="Фильтр (период)" />
+            <Label layoutX="2.0" layoutY="28.0" text="с" />
+            <Label layoutX="186.0" layoutY="28.0" text="по" />
+            <Button layoutX="232.0" layoutY="69.0" mnemonicParsing="false" onAction="#fillTable" text="Вывести таблицу" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
